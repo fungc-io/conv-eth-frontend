@@ -1,25 +1,22 @@
 <template>
 	<div>
 		<div v-if="!isConnected">
-			<button
-				class="btn btn-outline-primary btn-pill"
-				v-if="hasMetaMask"
-				@click="connectMetaMask"
-				:disabled="waitingForConnection"
-			>
-				<img  class="c-icon mr-1" :src="require('@/assets/metamask-fox.svg')" /> Connect <span class="d-none d-lg-inline">with MetaMask</span>
+			<button class="btn btn-outline-primary btn-pill" v-if="hasMetaMask" @click="connectMetaMask"
+				:disabled="waitingForConnection">
+				<img class="c-icon mr-1" :src="require('@/assets/metamask-fox.svg')" />
+				Connect <span class="d-none d-lg-inline">with MetaMask</span>
 			</button>
-			<span v-else
-				>MetaMask not found.
+			<span v-else>MetaMask not found.
 				<a :href="metaMaskUrl" target="_blank">
 					Get MetaMask!
-				</a></span
-			>
+				</a></span>
 		</div>
 		<div v-else>
 			<div v-if="isEthMainnet">
 				<div class="connection">
-					<span class="icon success"></span> mainnet connected ({{account|address}})
+					<span class="icon success"></span> mainnet connected ({{
+						account | address
+					}})
 				</div>
 			</div>
 			<div v-else>
@@ -48,12 +45,12 @@ export default {
 			return this.chainId === "0x1";
 		},
 	},
-	filters:{
-		'address': function(value){
-			if(!value) return ''
-			let str = String(value)
-			return str.substring(0,6)+"..."+str.substring(str.length-4)
-		}
+	filters: {
+		address: function(value) {
+			if (!value) return "";
+			let str = String(value);
+			return str.substring(0, 6) + "..." + str.substring(str.length - 4);
+		},
 	},
 	methods: {
 		async connectMetaMask() {
@@ -64,7 +61,6 @@ export default {
 					method: "eth_requestAccounts",
 				});
 				const account = accounts[0];
-				console.log(account);
 				this.account = account;
 				this.isConnected = ethereum.isConnected();
 				this.getDataFromEthereum();
@@ -79,14 +75,14 @@ export default {
 		async getDataFromEthereum() {
 			if (!this.isConnected) return;
 			const ethereum = window.ethereum;
-			this.chainId = await ethereum.request({ method: 'eth_chainId' });
+			this.chainId = await ethereum.request({ method: "eth_chainId" });
 		},
 	},
 	created() {
 		if (typeof window.ethereum !== "undefined" && window.ethereum.isMetaMask) {
 			console.log("MetaMask is installed!");
 			this.hasMetaMask = true;
-			// this.isConnected = false//window.ethereum.isConnected();
+			// this.isConnected = window.ethereum.isConnected();
 			// if (this.isConnected) this.getDataFromEthereum();
 		}
 	},
@@ -102,11 +98,11 @@ export default {
 		border-radius: 50%;
 		margin-right: 0.2rem;
 		margin-bottom: 0.1rem;
-		&.success{
+		&.success {
 			background-color: rgb(0, 209, 112);
 			box-shadow: 0px 0px 5px -1px rgb(0, 160, 40);
 		}
-		&.warning{
+		&.warning {
 			background-color: rgb(245, 188, 0);
 			box-shadow: 0px 0px 5px -1px rgb(160, 131, 0);
 		}

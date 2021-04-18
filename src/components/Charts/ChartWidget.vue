@@ -11,28 +11,18 @@
 				</div>
 				<div class="btn-toolbar mt-2 my-lg-auto">
 					<div class="btn-group btn-group-toggle mx-auto" v-if="curView">
-						<label
-							class="btn btn-outline-primary"
-							v-for="option in options"
-							:key="option.value"
-							:class="{ active: curView.value == option.value }"
-						>
-							<input
-								type="radio"
-								name="cur-view"
-								:id="option.value"
-								v-model="curView"
-								:value="option"
-							/>
+						<label class="btn btn-outline-primary" v-for="option in options" :key="option.value"
+							:class="{ active: curView.value == option.value }">
+							<input type="radio" name="cur-view" :id="option.value" v-model="curView" :value="option" />
 							{{ option.label }}
 						</label>
 					</div>
 				</div>
 			</div>
 			<div class="c-chart-wrapper">
-				<chart v-show="curView.value == 'volume'" :chartData="volumeDatas"/>
-                <chart v-show="curView.value == 'token0Price'" :chartData="token0PriceDatas" chartType="line"/>
-                <chart v-show="curView.value == 'token1Price'" :chartData="token1PriceDatas" chartType="line"/>
+				<chart v-show="curView.value == 'volume'" :chartData="volumeDatas" />
+				<chart v-show="curView.value == 'token0Price'" :chartData="token0PriceDatas" chartType="line" />
+				<chart v-show="curView.value == 'token1Price'" :chartData="token1PriceDatas" chartType="line" />
 			</div>
 		</div>
 		<div class="card-footer">

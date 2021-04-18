@@ -1,26 +1,28 @@
 <template>
-	<div id="app" class="c-app">
-		<div class="c-wrapper">
-			<div class="c-body">
-				<div class="c-main">
-					<div class="container">
-						<app-header />
-						<rates-stats />
-						<pooled-stats />
-						<div class="row">
-							<div class="col">
-								<chart-widget />
-							</div>
-						</div>
-						<div class="row">
-							<div class="col"><transactions-widget /></div>
-						</div>
-						<app-footer />
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div id="app" class="c-app">
+    <div class="c-wrapper">
+      <div class="c-body">
+        <div class="c-main">
+          <div class="container">
+            <app-header />
+            <rates-stats />
+            <pooled-stats />
+            <div class="row">
+              <div class="col">
+                <chart-widget />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <transactions-widget />
+              </div>
+            </div>
+            <app-footer />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -39,7 +41,7 @@ export default {
 		"app-footer": Footer,
 		RatesStats,
 		ChartWidget,
-	}
+	},
 };
 </script>
 
