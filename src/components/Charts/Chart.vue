@@ -60,7 +60,7 @@ export default {
 									if (label) label += ": ";
 									if (context.parsed.y !== null) {
 										let num = Number(context.parsed.y)
-										label += num < 0.001 ? num.toPrecision(3) : num
+										label += num < 0.001 ? num.toPrecision(3) : num.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits:2})
 									}
 									return label;
 								},
@@ -72,7 +72,8 @@ export default {
 							ticks: {
 								callback: function(value) {
 									let num = Number(value);
-									return num < 0.001 ? num.toPrecision(3) : num;
+									let displayNum = Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
+									return num < 0.001 ? num.toPrecision(3) : displayNum;
 								},
 							},
 						},
