@@ -1,13 +1,20 @@
 <template>
     <div>
-        <div class="row">
-            <div class="col">
-                <h1>ETH/CONV Pool <a :href="contractURL" style="white-space:nowrap" target="_blank" class="lead">View Contract</a></h1>
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <h1>ETH/CONV Pool <a :href="contractURL" style="white-space:nowrap" target="_blank" class="lead">View Contract</a></h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Last update: {{lastUpdate}} ({{timeAgo}})
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                Last update: {{lastUpdate}} ({{timeAgo}})
+            <div class="mt-3 mt-md-2">
+                <meta-mask-connection />
             </div>
         </div>
     </div>
@@ -16,8 +23,10 @@
 import dayjs from 'dayjs'
 import relativeTime from "dayjs/plugin/relativeTime"
 dayjs.extend(relativeTime)
+import MetaMaskConnection from "./MetaMaskConnection.vue" 
 export default {
     name: "Header",
+    components: {MetaMaskConnection},
     data(){
         return {
             contractURL: process.env.VUE_APP_POOL_CONTRACT_URL,

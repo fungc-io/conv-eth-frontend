@@ -56,7 +56,7 @@ export default {
 		return {
 			options: [
 				{
-					label: "Volume (USD)",
+					label: "Volume",
 					value: "volume",
 				},
 				{
