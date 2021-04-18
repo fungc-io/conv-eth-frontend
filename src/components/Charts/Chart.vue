@@ -8,9 +8,13 @@
 import Chart from "chart.js/auto";
 import dayjs from "dayjs";
 export default {
-	name: "ChartVolume",
+	name: "ChartPrice",
 	props: {
 		chartData: Array,
+		chartType: {
+			type: String,
+			default: "bar"
+		}
 	},
 	data() {
 		return {
@@ -25,13 +29,12 @@ export default {
 			let chartDataset = [];
 			// transform chart data
 			let chartData = [...this.chartData];
-			console.log(chartData);
 			chartData.reverse().forEach((data) => {
 				labels.push(dayjs(data.timestamp * 1000).format("MM/DD HH:mm"));
 				chartDataset.push(data.value);
 			});
 			this.chartConfig = {
-				type: "bar",
+				type: this.chartType,
 				data: {
 					labels: labels,
 					datasets: [
@@ -56,8 +59,7 @@ export default {
 							ticks: {
 								callback: function(value) {
                                     let num = Number(value)
-                                    let displayNum = Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
-									return "US$" + displayNum;
+                                    return (num<0.001)?num.toPrecision(3):num
 								}
 							},
 						},

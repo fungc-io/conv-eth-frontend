@@ -27,9 +27,9 @@
 				</div>
 			</div>
 			<div class="c-chart-wrapper">
-				<chart-volume v-show="curView.value == 'volume'" :chartData="volumeDatas"/>
-                <chart-price v-show="curView.value == 'token0Price'" :chartData="token0PriceDatas"/>
-                <chart-price v-show="curView.value == 'token1Price'" :chartData="token1PriceDatas"/>
+				<chart v-show="curView.value == 'volume'" :chartData="volumeDatas"/>
+                <chart v-show="curView.value == 'token0Price'" :chartData="token0PriceDatas" chartType="line"/>
+                <chart v-show="curView.value == 'token1Price'" :chartData="token1PriceDatas" chartType="line"/>
 			</div>
 		</div>
 		<div class="card-footer">
@@ -44,11 +44,10 @@
 </template>
 <script>
 import gql from "graphql-tag";
-import ChartVolume from "./ChartVolume.vue";
-import ChartPrice from './ChartPrice.vue';
+import Chart from './Chart.vue';
 export default {
 	name: "ChartWidget",
-	components: { ChartVolume, ChartPrice },
+	components: { Chart },
 	data() {
 		return {
 			options: [
