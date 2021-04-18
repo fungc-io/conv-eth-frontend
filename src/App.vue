@@ -8,6 +8,11 @@
           <rates-stats />
           <pooled-stats />
           <div class="row">
+            <div class="col">
+              <chart-widget />
+            </div>
+          </div>
+          <div class="row">
             <div class="col"><transactions-widget /></div>
           </div>
           <app-footer />
@@ -20,6 +25,7 @@
 
 <script>
 import PooledStats from './components/Pooled/PooledStats.vue'
+import ChartWidget from './components/Charts/ChartWidget.vue'
 import TransactionsWidget from './components/Transactions/TransactionsWidget.vue'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
@@ -31,7 +37,8 @@ export default {
     PooledStats,
     'app-header': Header,
     'app-footer': Footer,
-    RatesStats
+    RatesStats,
+    ChartWidget
   }
 }
 </script>

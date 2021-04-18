@@ -1,0 +1,76 @@
+<template>
+	<div class="py-3">
+		<canvas id="chart-volume" ref="chart"></canvas>
+	</div>
+</template>
+.
+<script>
+import Chart from "chart.js/auto";
+import dayjs from "dayjs";
+export default {
+	name: "ChartVolume",
+	props: {
+		chartData: Array,
+	},
+	data() {
+		return {
+			chartConfig: null,
+			chart: null,
+		};
+	},
+	methods: {
+		drawChart() {
+			if (!this.chartData) return;
+			let labels = [];
+			let chartDataset = [];
+			// transform chart data
+			let chartData = [...this.chartData];
+			console.log(chartData);
+			chartData.reverse().forEach((data) => {
+				labels.push(dayjs(data.timestamp * 1000).format("MM/DD HH:mm"));
+				chartDataset.push(data.value);
+			});
+			this.chartConfig = {
+				type: "bar",
+				data: {
+					labels: labels,
+					datasets: [
+						{
+							backgroundColor: "rgba(151, 187, 205, 0.5)",
+							borderColor: "rgba(151, 187, 205, 0.8)",
+							highlightFill: "rgba(151, 187, 205, 0.75)",
+							highlightStroke: "rgba(151, 187, 205, 1)",
+							data: chartDataset,
+						},
+					],
+				},
+				options: {
+					responsive: true,
+					plugins: {
+						legend: {
+							display: false,
+						},
+					},
+					scales: {
+						y: {
+							ticks: {
+								callback: function(value) {
+                                    let num = Number(value)
+                                    let displayNum = Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
+									return "US$" + displayNum;
+								}
+							},
+						},
+					},
+				},
+			};
+			let ctx = this.$refs.chart;
+			if (!this.chart) this.chart = new Chart(ctx, this.chartConfig);
+			else this.chart.update();
+		},
+	},
+	mounted() {
+		this.drawChart();
+	},
+};
+</script>

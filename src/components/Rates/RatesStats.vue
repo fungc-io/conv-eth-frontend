@@ -3,8 +3,8 @@
         <div class="row" v-if="pairs">
             <div class="col">
                 <div class="d-flex">
-                <span class="rate">1 CONV = {{pairs[0].token0Price | ETH}}</span>
-                <span class="rate">1 ETH = {{pairs[0].token1Price | CONV}}</span>
+                    <span class="rate">1 CONV = {{pairs[0].token0Price | ETH}}</span>
+                    <span class="rate">1 ETH = {{pairs[0].token1Price | CONV}}</span>
                 </div>
             </div>
         </div>
