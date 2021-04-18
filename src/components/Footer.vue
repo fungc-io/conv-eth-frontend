@@ -15,7 +15,7 @@ export default {
     name: "Footer",
     data(){
         return {
-            graphUrl: "https://api.thegraph.com/subgraphs/name/fungc-io/conv-eth-uniswap"
+            graphUrl: "https://thegraph.com/explorer/subgraph/fungc-io/conv-eth-uniswap"
         }
     }
 }
