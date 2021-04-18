@@ -13,8 +13,8 @@ export default {
 		chartData: Array,
 		chartType: {
 			type: String,
-			default: "bar"
-		}
+			default: "bar",
+		},
 	},
 	data() {
 		return {
@@ -53,14 +53,27 @@ export default {
 						legend: {
 							display: false,
 						},
+						tooltip: {
+							callbacks: {
+								label: function(context) {
+									let label = context.dataset.label || ""
+									if (label) label += ": ";
+									if (context.parsed.y !== null) {
+										let num = Number(context.parsed.y)
+										label += num < 0.001 ? num.toPrecision(3) : num
+									}
+									return label;
+								},
+							},
+						},
 					},
 					scales: {
 						y: {
 							ticks: {
 								callback: function(value) {
-                                    let num = Number(value)
-                                    return (num<0.001)?num.toPrecision(3):num
-								}
+									let num = Number(value);
+									return num < 0.001 ? num.toPrecision(3) : num;
+								},
 							},
 						},
 					},
