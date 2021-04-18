@@ -1,12 +1,12 @@
 <template>
     <div class="row" v-if="pairs">
-        <div class="col">
+        <div class="col-12 col-lg-4">
             <pooled-widget title="ETH Pooled" :icon="icons.eth">{{pairs[0].reserve0|ETH}}</pooled-widget>
         </div>
-        <div class="col">
+        <div class="col-12 col-lg-4">
             <pooled-widget title="CONV Pooled" :icon="icons.conv">{{pairs[0].reserve1|CONV}}</pooled-widget>
         </div>
-        <div class="col">
+        <div class="col-12 col-lg-4">
             <pooled-widget title="Total Pooled" :icon="icons.usd">{{pairs[0].reserveUSD|USD}}</pooled-widget>
         </div>
     </div>

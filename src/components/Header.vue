@@ -2,7 +2,7 @@
     <div>
         <div class="row">
             <div class="col">
-                <h1>ETH/CONV Pool <a :href="contractURL" target="_blank" class="lead">View Contract</a></h1>
+                <h1>ETH/CONV Pool <a :href="contractURL" style="white-space:nowrap" target="_blank" class="lead">View Contract</a></h1>
             </div>
         </div>
         <div class="row">

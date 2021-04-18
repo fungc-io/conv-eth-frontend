@@ -1,13 +1,13 @@
 <template>
 	<div class="card">
 		<div class="card-body" v-if="hourDatas">
-			<div class="d-flex justify-content-between">
+			<div class="d-flex flex-column flex-lg-row justify-content-between">
 				<div>
 					<h4 class="card-title mb-0">{{ curView.label }}</h4>
 					<div class="small text-muted">Past 24 Hours</div>
 				</div>
-				<div class="btn-toolbar d-none d-md-block">
-					<div class="btn-group btn-group-toggle" v-if="curView">
+				<div class="btn-toolbar mt-2 my-lg-auto">
+					<div class="btn-group btn-group-toggle mx-auto" v-if="curView">
 						<label
 							class="btn btn-outline-primary"
 							v-for="option in options"
