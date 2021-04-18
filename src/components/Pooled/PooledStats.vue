@@ -15,7 +15,7 @@
 import gql from 'graphql-tag'
 import PooledWidget from './PooledWidget.vue'
 export default {
-    name: "Rates",
+    name: "PooledStats",
     components: {PooledWidget},
     data(){
         return {

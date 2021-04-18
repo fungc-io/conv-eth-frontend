@@ -3,6 +3,7 @@ import dayjs from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
 dayjs.extend(relativeTime)
 function currencyFormat(value){
+    if (value>0 && value < 0.01) return "<0.01"
     return Number(value).toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits:2})
 }
 const filters = {
