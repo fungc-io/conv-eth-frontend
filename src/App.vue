@@ -4,6 +4,7 @@
     <div class="c-body">
       <div class="c-main">
         <div class="container">
+          <pooled-stats />
           <div class="row">
             <div class="col"><transactions-widget /></div>
           </div>
@@ -16,11 +17,13 @@
 </template>
 
 <script>
+import PooledStats from './components/Pooled/PooledStats.vue'
 import TransactionsWidget from './components/Transactions/TransactionsWidget.vue'
 export default {
   name: 'App',
   components: {
-    TransactionsWidget
+    TransactionsWidget,
+    PooledStats
   }
 }
 </script>

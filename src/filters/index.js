@@ -7,13 +7,13 @@ function currencyFormat(value){
 }
 const filters = {
     'USD': function(value){
-        return (value)?`US$${currencyFormat(value)}`:''
+        return (value)?`US$${currencyFormat(value)}`:'0'
     },
     'CONV': function(value){
-        return (value)?`${currencyFormat(value)} CONV`:''
+        return (value)?`${currencyFormat(value)} CONV`:'0'
     },
     'ETH': function(value){
-        return (value)?`${currencyFormat(value)} ETH`:''
+        return (value)?`${currencyFormat(value)} ETH`:'0'
     },
     'fromNow': function(timestamp){
         return dayjs(timestamp*1000).fromNow()
