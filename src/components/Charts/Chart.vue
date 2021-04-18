@@ -3,7 +3,6 @@
 		<canvas id="chart-volume" ref="chart"></canvas>
 	</div>
 </template>
-.
 <script>
 import Chart from "chart.js/auto";
 import dayjs from "dayjs";
