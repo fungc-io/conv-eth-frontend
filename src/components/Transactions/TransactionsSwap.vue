@@ -25,7 +25,7 @@
     <nav aria-label="Pagination">
         <ul class="pagination">
             <li class="page-item" :class="{'disabled':!(page > 0)}"><a class="page-link" href="#" @click.prevent="prevPage"><span aria-hidden="true">&laquo;</span></a></li>
-            <li class="page-item"><a class="page-link" href="#">{{page+1}}</a></li>
+            <li class="page-item"><span class="page-link">{{page+1}}</span></li>
             <li class="page-item" :class="{'disabled':!(page < maxPage)}"><a class="page-link" href="#" @click.prevent="nextPage"><span aria-hidden="true">&raquo;</span></a></li>
         </ul>
     </nav>
