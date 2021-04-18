@@ -1,12 +1,12 @@
 <template>
-  <div class="hello">
+  <div>
     <h1>{{ prices }}</h1>
-    
   </div>
 </template>
 
 <script>
 import gql from 'graphql-tag'
+
 export default {
   name: 'HelloWorld',
   apollo:{

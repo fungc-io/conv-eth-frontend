@@ -1,20 +1,26 @@
 <template>
   <div id="app" class="c-app">
+    <div class="c-wrapper">
     <div class="c-body">
       <div class="c-main">
-        <HelloWorld/>
+        <div class="container">
+          <div class="row">
+            <div class="col"><transactions-widget /></div>
+          </div>
+          
+        </div>
       </div>
+    </div>
     </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TransactionsWidget from './components/Transactions/TransactionsWidget.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TransactionsWidget
   }
 }
 </script>
