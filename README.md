@@ -2,9 +2,13 @@
 
 View demo: <https://conv-eth-pool.surge.sh>
 
-Subgraph: <https://thegraph.com/explorer/subgraph/fungc-io/conv-eth-uniswap>
+Frontend repo: <https://github.com/fungc-io/conv-eth-frontend>
 
-### To be improved in the future
+Subgraph: <https://thegraph.com/explorer/subgraph/fungc-io/conv-eth-uniswap> 
+
+Subgraph project repo: <https://github.com/fungc-io/conv-eth-uniswap>
+
+## To be improved in the future
 
 - To show "Mints" and "Burns" transactions 
 - Get better USD estimations by taking average of stablecoins, they're currently estimated by ETH-USDT price only
