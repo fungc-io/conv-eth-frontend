@@ -1,6 +1,7 @@
-# conv-eth-frontend
+# Frontend of CONV/ETH Pool Subgraph
 
 View demo: <https://conv-eth-pool.surge.sh>
+
 Subgraph: <https://thegraph.com/explorer/subgraph/fungc-io/conv-eth-uniswap>
 
 ### To be improved in the future
