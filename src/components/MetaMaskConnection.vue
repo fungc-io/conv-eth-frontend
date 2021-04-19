@@ -87,6 +87,9 @@ export default {
 		}
 	},
 };
+/***
+ * TODO: Listen to events from ethereum API, connection status should change when user change network/account
+ */
 </script>
 <style lang="scss" scoped>
 .connection {

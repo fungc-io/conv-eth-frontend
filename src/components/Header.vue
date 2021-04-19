@@ -1,25 +1,25 @@
 <template>
-    <div>
-        <div class="d-flex flex-column flex-md-row justify-content-between">
-            <div>
-                <div class="row">
-                    <div class="col">
-                        <h1>
-                            ETH/CONV Pool
-                            <a :href="contractURL" style="white-space:nowrap" target="_blank" class="lead">View
-                                Contract</a>
-                        </h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">Last update: {{ lastUpdate }} ({{ timeAgo }})</div>
-                </div>
-            </div>
-            <div class="mt-3 mt-md-2">
-                <meta-mask-connection />
-            </div>
-        </div>
-    </div>
+	<div>
+		<div class="d-flex flex-column flex-md-row justify-content-between">
+			<div>
+				<div class="row">
+					<div class="col">
+						<h1>
+							ETH/CONV Pool
+							<a :href="contractURL" style="white-space:nowrap" target="_blank" class="lead">View
+								Contract</a>
+						</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">Last update: {{ lastUpdate }} ({{ timeAgo }})</div>
+				</div>
+			</div>
+			<div class="mt-3 mt-md-2">
+				<meta-mask-connection />
+			</div>
+		</div>
+	</div>
 </template>
 <script>
 import dayjs from "dayjs";

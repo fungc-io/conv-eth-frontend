@@ -39,6 +39,10 @@
 import gql from "graphql-tag";
 import Chart from './Chart.vue';
 import LoadingCurtain from '../LoadingCurtain.vue'
+/**
+ * show loading screen when apollo is fetching data
+ * TODO: implement global loading state
+*/
 export default {
 	name: "ChartWidget",
 	components: { Chart, LoadingCurtain},

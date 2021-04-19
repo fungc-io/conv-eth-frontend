@@ -31,6 +31,7 @@
 	</div>
 </template>
 <script>
+// some nav links are disabled because the data is not ready (WIP)
 import TransactionsSwap from "./TransactionsSwap.vue";
 
 export default {
